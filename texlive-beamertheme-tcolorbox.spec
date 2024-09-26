@@ -1,5 +1,5 @@
 Name:		texlive-beamertheme-tcolorbox
-Version:	71124
+Version:	72368
 Release:	1
 Summary:	A beamer inner theme which reproduces standard beamer blocks using tcolorboxes
 Group:		Publishing

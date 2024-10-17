@@ -3,7 +3,7 @@ Version:	72368
 Release:	1
 Summary:	A beamer inner theme which reproduces standard beamer blocks using tcolorboxes
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-tcolorbox
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-tcolorbox
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-tcolorbox.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-tcolorbox.doc.r%{version}.tar.xz

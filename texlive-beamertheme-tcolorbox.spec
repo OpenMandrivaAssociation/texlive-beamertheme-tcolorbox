@@ -1,38 +1,29 @@
-Name:		texlive-beamertheme-tcolorbox
-Version:	72368
-Release:	1
-Summary:	A beamer inner theme which reproduces standard beamer blocks using tcolorboxes
+%global tl_name beamertheme-tcolorbox
+%global tl_revision 77380
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.4
+Release:	%{tl_revision}.1
+Summary:	A beamer/ltx-talk inner theme to reproduce standard beamer blocks using tcolo...
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-tcolorbox
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamer-contrib/themes/beamertheme-tcolorbox
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-tcolorbox.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-tcolorbox.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-tcolorbox.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-tcolorbox.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(beamer)
+Requires:	texlive(tcolorbox)
+Requires:	texlive(tikzfill)
+Requires:	texlive(tools)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides an inner theme for beamer which
-reproduces standard beamer blocks using tcolorboxes. The look
-and feel (rounded/sharp corners, shadows and colours) will
-automatically adapt to which other themes are loaded.
+This package provides an inner theme for beamer or ltx-talk which
+reproduces standard beamer blocks using tcolorboxes. The look and feel
+(rounded/sharp corners, shadows and colours) will automatically adapt to
+which other themes are loaded.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/beamertheme-tcolorbox
-%doc %{_texmfdistdir}/doc/latex/beamertheme-tcolorbox
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
